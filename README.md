@@ -48,7 +48,8 @@ admin            1234             Admin
 joseph           1234             Buyer
 adu              1234             Seller
 
-
+## License
+This project is licensed under the MIT License - see the LICENSE file for details
 
 
 

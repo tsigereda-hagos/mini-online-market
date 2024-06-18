@@ -39,7 +39,8 @@ npm start
 4. Open your browser and navigate to http://localhost:3000
 
 5. API Documentation
-After running the backend server, access the Swagger UI to view the API documentation at http://localhost:8080/swagger-ui.html
+After running the backend server, access the Swagger UI to view the API documentation at
+ http://localhost:8080/swagger-ui.html
 
 ## UserDummy Data
 

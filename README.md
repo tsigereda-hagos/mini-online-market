@@ -24,12 +24,14 @@ This repository contains the source code for the Mini Online Market, a full-stac
 git clone https://github.com/tsigereda-hagos/mini-online-market.git
 cd mini-online-market
 
-2. Set up the Backend
+2. Set up the Backend, switch to the main branch:
+git checkout main
 cd Backend/waa-main
 ** Start the Spring Boot server with the following command or run the project in your favorite IDE
  mvn spring-boot:run
 
-3. Set up the Frontend
+3. Set up the Frontend, switch to the master branch:
+git checkout master
 cd Frontend
 ** Install dependencies:
 npm install

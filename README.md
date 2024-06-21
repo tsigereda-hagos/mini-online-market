@@ -42,14 +42,14 @@ npm start
 After running the backend server, access the Swagger UI to view the API documentation at
  http://localhost:8080/swagger-ui.html
 
-## UserDummy Data
+# UserDummy Data
 
 Username         password         role
 admin            1234             Admin
 joseph           1234             Buyer
 adu              1234             Seller
 
-## License
+# License
 This project is licensed under the MIT License - see the LICENSE file for details
 
 

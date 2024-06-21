@@ -2,13 +2,13 @@
 
 
 
-# Credentials to Access this website are as Follows:-
+# Credentials to Access this website:
 
-Username         password         role
+Username ,        Password     ,    role
 
-admin            1234             Admin
-joseph           1234             Buyer
-adu              1234             Seller
+admin    ,        1234          ,  Admin
+joseph   ,       1234           ,  Buyer
+adu      ,        1234          , Seller
 
 # Group Members:
 

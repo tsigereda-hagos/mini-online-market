@@ -7,7 +7,9 @@
 Username ,        Password     ,    role
 
 admin    ,        1234          ,  Admin
+
 joseph   ,       1234           ,  Buyer
+
 adu      ,        1234          , Seller
 
 # Group Members:

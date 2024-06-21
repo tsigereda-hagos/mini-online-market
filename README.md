@@ -18,7 +18,7 @@ Adonay Gebrerufael
 
 Yosief Gebrewold
 
-Samuel Michael
+Samsom Michael
 
 Tsigereda Hagos
 

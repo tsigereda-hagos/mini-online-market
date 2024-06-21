@@ -4,72 +4,20 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import api from '../../configuration/api';
-import ShoppingCart from '../../containers/ShoppingCart/ShoppingCart';
-import Reviews from '../../containers/Reviews/Reviews';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import EditProductModal from './EditProductModal';
+import ShoppingCart from '../../containers/ShoppingCart/ShoppingCart';
+import Reviews from '../../containers/Reviews/Reviews';
+import api from '../../configuration/api';
 import { authenticationService } from '../../services/authentication.service';
+import ProductEdit from './ProductEdit';
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-  },
-  toolbar: {
-    paddingRight: 24,
-  },
-  toolbarIcon: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: '0 8px',
-    ...theme.mixins.toolbar,
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-  appBarShift: {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  menuButton: {
-    marginRight: 36,
-  },
-  menuButtonHidden: {
-    display: 'none',
-  },
-  title: {
-    flexGrow: 1,
-  },
-  drawerPaper: {
-    position: 'relative',
-    whiteSpace: 'nowrap',
-    width: drawerWidth,
-    transition: theme.transitions.create('width', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  drawerPaperClose: {
-    overflowX: 'hidden',
-    transition: theme.transitions.create('width', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    width: theme.spacing(7),
-    [theme.breakpoints.up('sm')]: {
-      width: theme.spacing(9),
-    },
   },
   appBarSpacer: theme.mixins.toolbar,
   content: {
@@ -84,59 +32,52 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(2),
     display: 'flex',
-    overflow: 'auto',
     flexDirection: 'column',
-  },
-  fixedHeight: {
-    height: 240,
   },
 }));
 
 export default function ProductDetail(props) {
   const classes = useStyles();
-  const [refresh, setRefresh] = useState(false);
-  const [product, setProduct] = useState();
+  const [product, setProduct] = useState(null);
+  const [editModalOpen, setEditModalOpen] = useState(false);
 
-  function fetchProductDetail() {
-    api
-      .get('products/' + props.productId)
-      .then(function (response) {
-        setProduct(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
+  useEffect(() => {
+    const fetchProductDetail = () => {
+      api.get(`products/${props.productId}`)
+        .then(response => setProduct(response.data))
+        .catch(error => console.error("Failed to fetch product details", error));
+    };
 
-  const addToCart = () => {
-    api
-      .get(
-        'buyers/' +
-          authenticationService.currentUserValue.userId +
-          '/shoppingcart'
-      )
-      .then(function (response) {
-        let products = response.data;
-        products.push(product);
-        api
-          .patch(
-            'buyers/' +
-              authenticationService.currentUserValue.userId +
-              '/shoppingcart',
-            products
-          )
-          .then(function (response) {
-            setRefresh(true);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-      });
+    fetchProductDetail();
+  }, [props.productId]);
+
+  const handleEditProduct = () => {
+    setEditModalOpen(true);
   };
 
-  useEffect(fetchProductDetail, [props.productId]);
+  const handleCloseModal = () => {
+    setEditModalOpen(false);
+  };
 
-  useEffect(fetchProductDetail, [props.productId, refresh]);
+  const handleSaveProduct = (updatedProduct) => {
+    console.log("Product Updated", updatedProduct);
+    // Here you would typically send a request to your API to save the updated product
+    setProduct(updatedProduct); // Update the product details in the local state
+    handleCloseModal();
+    // Optionally refetch the product details if required
+  };
+
+  const addToCart = () => {
+    const userId = authenticationService.currentUserValue.userId;
+    api.get(`buyers/${userId}/shoppingcart`)
+      .then(response => {
+        let products = response.data;
+        products.push(product);
+        api.patch(`buyers/${userId}/shoppingcart`, products)
+          .then(() => console.log("Product added to cart"))
+          .catch(error => console.error("Failed to add product to cart", error));
+      });
+  };
 
   return (
     <div className={classes.root}>
@@ -145,40 +86,37 @@ export default function ProductDetail(props) {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            {/* Product Detail */}
-            <Grid item xs={12} md={8} lg={8}>
-              <Paper
-                style={{
-                  height: '50%',
-                  width: '50%',
-                }}
-              >
-                <Box
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                  flexDirection="column"
-                >
-                  <h3>{product && product.name}</h3>
-                  <h5>{product && product.description}</h5>
-
-                  <Button size="small" id="addItem" onClick={addToCart}>
-                    Add to Cart
-                  </Button>
-                </Box>
+            <Grid item xs={12} md={8} lg={9}>
+              <Paper className={classes.paper}>
+                {product && (
+                  <>
+                    <h3>{product.name}</h3>
+                    <h5>{product.description}</h5>
+                    <Button onClick={addToCart}>Add to Cart</Button>
+                    <Button color="primary" onClick={handleEditProduct}>
+                      Edit Product
+                    </Button>
+                  </>
+                )}
               </Paper>
             </Grid>
-             
-            <Grid item xs={12} md={4} lg={4}>
-           <h1> My Shopping Cart </h1>
-              <ShoppingCart checkAgain={refresh} />
+            <Grid item xs={12} md={4} lg={3}>
+              <h1>My Shopping Cart</h1>
+              <ShoppingCart />
             </Grid>
-            {/* Reviews */}
             <Grid item xs={12}>
               <Reviews productId={props.productId} />
             </Grid>
           </Grid>
         </Container>
+        {editModalOpen && product && (
+          <ProductEdit
+            product={product}
+            open={editModalOpen}
+            onClose={handleCloseModal}
+            onSave={handleSaveProduct}
+          />
+        )}
       </main>
     </div>
   );

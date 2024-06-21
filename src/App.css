@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color:#307AFF;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -32,13 +32,15 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
 #welcome {
   margin: 5rem auto;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 8px rgba(84, 79, 209, 0.2);
   width: 40rem;
   border-radius: 8px;
   padding: 1rem;
@@ -54,7 +56,7 @@
 
 #welcome label h1 {
   display: block;
-  color: #616161;
+  color: #307AFF;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
@@ -63,18 +65,19 @@
 #welcome button {
   margin: 1rem auto;
   font-size: 1.25rem;
-  background-color: #ffbb00;
-  border: 1px solid #ffbb00;
+  background-color: #307AFF;
+  border: 1px solid #307AFF;
   padding: 0.5rem 1.5rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  color: #2c2922;
+  color: white;
 }
 
 #welcome button:hover,
 #welcome button:active {
-  background-color: #ffa600;
-  border-color: #ffa600;
+  background-color: #205493;
+  border-color: #205493;
 }
+
 #login {
   margin: 5rem auto;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
@@ -84,15 +87,16 @@
   text-align: center;
   background-color: #f4f0fa;
   height: 15rem;
- 
+
 }
 
-#Wpage{
+#Wpage {
   color: black;
   font-family: 'Courier New', Courier, monospace;
   font-size: 50px;
 }
-#buto{
+
+#buto {
   margin: auto;
 }
 
@@ -114,17 +118,17 @@
 #login button {
   margin: 1rem auto;
   font-size: 1.25rem;
-  background-color: #ffbb00;
-  border: 1px solid #ffbb00;
+  background-color: #205493;
+  border: 1px solid #205493;
   padding: 0.5rem 1.5rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  color: #2c2922;
+  color: white;
 }
 
 #login button:hover,
 #login button:active {
-  background-color: #ffa600;
-  border-color: #ffa600;
+  background-color: #205493;
+  border-color: #205493;
 }
 
 #adminDash {
@@ -133,14 +137,14 @@
   height: 8rem;
   display: flex;
   background-color: darkslategrey;
-  color: black;
+  color: white;
   padding: 0 10%;
   font-weight: bolder;
 }
 
-#adminDash Link{
+#adminDash Link {
   text-decoration: none;
-  
+
 }
 
 #adminDash a:hover,
@@ -152,33 +156,33 @@
   font-size: 1.25rem;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
-  background-color: #ffbb00;
-  border: 1px solid #ffbb00;
+  background-color:#205493;
+  border: 1px solid #205493;
   padding: 0.5rem 1.5rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  color: #2c2922;
+  color: white;
 }
 
 
-#adminDash h3{
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    font-size: 2rem;
+#adminDash h3 {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 2rem;
 }
 
-#adminDash .button{
+#adminDash .button {
   margin-left: 10px;
 }
 
-#adminDash #head{
+#adminDash #head {
   position: relative;
   left: 30%;
 }
 
 #adminDash button:hover,
 #adminDash button:active {
-  background-color: #ffa600;
-  border-color: #ffa600;
+  background-color: #205493;
+  border-color: #205493;
 }
 
 #Signup {
@@ -190,7 +194,7 @@
   padding: 1rem;
   text-align: center;
   background-color: #f4f0fa;
-  
+
 }
 
 #Signup control {
@@ -208,21 +212,21 @@
 #Signup button {
   margin: 1rem auto;
   font-size: 1.25rem;
-  background-color: #ffbb00;
-  border: 1px solid #ffbb00;
+  background-color: #205493;
+  border: 1px solid #205493;
   padding: 0.5rem 1.5rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  color: #2c2922;
+  color: white;
 }
 
 #Signup button:hover,
 #Signup button:active {
-  background-color: #ffa600;
-  border-color: #ffa600;
+  background-color: #205493;
+  border-color: #205493;
 }
 
-div{
-padding-top: 15px;
+div {
+  padding-top: 15px;
 }
 
 #sellerDash {
@@ -231,14 +235,14 @@ padding-top: 15px;
   height: 8rem;
   display: flex;
   background-color: darkslategrey;
-  color: black;
+  color: white;
   padding: 0 10%;
   font-weight: bolder;
 }
 
-#sellerDash Link{
+#sellerDash Link {
   text-decoration: none;
-  
+
 }
 
 #sellerDash a:hover,
@@ -250,21 +254,21 @@ padding-top: 15px;
   font-size: 1.25rem;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
-  background-color: #ffbb00;
-  border: 1px solid #ffbb00;
+  background-color: #307AFF;
+  border: 1px solid#307AFF;
   padding: 0.5rem 1.5rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  color: #2c2922;
+  color: white;
 }
 
 
-#sellerDash h3{
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    font-size: 2rem;
+#sellerDash h3 {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 2rem;
 }
 
-#sellerDash .button{
+#sellerDash .button {
   margin-left: 10px;
 }
 
@@ -274,8 +278,8 @@ padding-top: 15px;
 
 #sellerDash button:hover,
 #sellerDash button:active {
-  background-color: #ffa600;
-  border-color: #ffa600;
+  background-color: #307AFF;
+  border-color: #307AFF;
 }
 
 
@@ -287,14 +291,14 @@ padding-top: 15px;
   height: 8rem;
   display: flex;
   background-color: darkslategrey;
-  color: black;
+  color: white;
   padding: 0 10%;
   font-weight: bolder;
 }
 
-#buyerDash Link{
+#buyerDash Link {
   text-decoration: none;
-  
+
 }
 
 #buyerDash a:hover,
@@ -306,21 +310,21 @@ padding-top: 15px;
   font-size: 1.25rem;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
-  background-color: #ffbb00;
-  border: 1px solid #ffbb00;
+  background-color:#307AFF;
+  border: 1px solid #307AFF;
   padding: 0.5rem 1.5rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  color: #2c2922;
+  color: white;
 }
 
 
-#buyerDash h3{
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    font-size: 2rem;
+#buyerDash h3 {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 2rem;
 }
 
-#buyerDash .button{
+#buyerDash .button {
   margin-left: 10px;
 }
 
@@ -330,8 +334,8 @@ padding-top: 15px;
 
 #buyerDash button:hover,
 #buyerDash button:active {
-  background-color: #ffa600;
-  border-color: #ffa600;
+  background-color: #307AFF;
+  border-color:#307AFF;
 }
 
 #sellerComp {
@@ -340,7 +344,7 @@ padding-top: 15px;
   height: 8rem;
   display: flex;
   background-color: darkslategrey;
-  color: black;
+  color:white;
   padding: 0 10%;
   font-weight: bolder;
 }
@@ -360,33 +364,33 @@ padding-top: 15px;
 #sellerComp button {
   margin: 1rem auto;
   font-size: 1.25rem;
-  background-color: #ffbb00;
-  border: 1px solid #ffbb00;
+  background-color: #307AFF;
+  border: 1px solid #307AFF;
   padding: 0.5rem 1.5rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  color: #2c2922;
+  color: white;
 }
 
 #sellerComp button:hover,
 #sellerComp button:active {
-  background-color: #ffa600;
-  border-color: #ffa600;
+  background-color:#307AFF;
+  border-color: #307AFF;
 }
 
 #review button:hover,
 #review button:active {
-  background-color: #ffa600;
-  border-color: #ffa600;
+  background-color: #307AFF;
+  border-color: #307AFF;
 }
 
 #review button {
   margin: 1rem auto;
   font-size: 0.75rem;
-  background-color: #ffbb00;
-  border: 1px solid #ffbb00;
+  background-color: #307AFF;
+  border: 1px solid #307AFF;
   padding: 0.5rem 1.5rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  color: #2c2922;
+  color: white;
   width: 10rem;
 }
 
@@ -394,50 +398,53 @@ padding-top: 15px;
 
 #placeOrder:hover,
 #placeOrder:active {
-  background-color: #ffa600;
-  border-color: #ffa600;
+  background-color: #307AFF;
+  border-color:#307AFF;
 }
 
-#placeOrder{
+#placeOrder {
   margin: 1rem auto;
   font-size: 0.75rem;
-  background-color: #ffbb00;
-  border: 1px solid #ffbb00;
+  background-color: #307AFF;
+  border: 1px solid #307AFF;
   padding: 0.5rem 1.5rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  color: #2c2922;
+  color: white;
   width: 25rem;
 
 }
 
-#addItem{
+#addItem {
   margin: 1rem auto;
   font-size: 0.75rem;
-  background-color: #ffbb00;
-  border: 1px solid #ffbb00;
+  background-color: #307AFF;
+  border: 1px solid #307AFF;
   padding: 0.5rem 1.5rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  color: #2c2922;
+  color: #307AFF;
   width: 10rem;
 
 }
 
-#seladd{
+#seladd {
   width: 300px;
   font-size: large;
   opacity: 0.8;
 }
-#itemsInCart{
+
+#itemsInCart {
   border: 3px solid gray;
   background-color: lavender;
   width: 10rem;
   padding: auto;
   /* display: table-column-group; */
 }
-#itemsInCartDeletButton{
+
+#itemsInCartDeletButton {
   background-color: #FF6666;
 }
-#emptyCart{
+
+#emptyCart {
   width: 500px;
   font-size: large;
   opacity: 0.5;
@@ -445,24 +452,20 @@ padding-top: 15px;
 
 #createNewProduct:hover,
 #createNewProduct:active {
-  background-color: #ffa600;
-  border-color: #ffa600;
+  background-color: #307AFF;
+  border-color: #307AFF;
 }
-#createNewProduct{
-  background-color: #ffbb00;
+
+#createNewProduct {
+  background-color: #307AFF;
 }
 
 .editDeleteOrders:hover,
 .editDeleteOrders:active {
-  background-color: #ffa600;
-  border-color: #ffa600;
-}
-.editDeleteOrders{
-  background-color: #ffbb00;
+  background-color: #307AFF;
+  border-color: #307AFF;
 }
 
-
-
-
-
-
+.editDeleteOrders {
+  background-color: #307AFF;
+}
